@@ -17,7 +17,7 @@ pipeline {
         stage('Run') {
             steps {
                 script {
-                    def output = sh(script: 'java -jar target/maven.jar', returnStdout: true)
+                    def output = sh(script: 'java -jar target\maven-0.0.1-SNAPSHOT.jar', returnStdout: true)
                     println output
                 }
             }
