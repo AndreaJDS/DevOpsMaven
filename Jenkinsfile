@@ -1,9 +1,25 @@
 pipeline {
     agent any
+    
     stages {
-        stage('Build Maven') {
+        stage('Checkout') {
             steps {
-                sh 'mvn clean compile'
+                checkout scm
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+        
+        stage('Run') {
+            steps {
+                script {
+                    def output = sh(script: 'java -jar target/maven.jar', returnStdout: true)
+                    println output
+                }
             }
         }
     }
