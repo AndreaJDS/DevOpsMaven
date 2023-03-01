@@ -18,7 +18,7 @@ public class App
     	    greeting = "Good afternoon";
     	}
     	String studentName = "Andrea"; // Replace this with the actual student's name
-    	String welcomeMessage = String.format("%s, %s, Welcome to COMP367!", greeting, studentName);
+    	String welcomeMessage = String.format("%s, %s, Welcome to COMP367!!", greeting, studentName);
     	System.out.println(welcomeMessage);
 
     }
